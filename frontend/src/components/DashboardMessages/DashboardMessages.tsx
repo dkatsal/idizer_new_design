@@ -10,7 +10,7 @@ import moment from 'moment';
 
 type UserItemPropss = {
   folder: string;
-  setMsgId: any;
+  setMsgId: (msgId: string) => void;
 };
 const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) => {
   const { messagesStore, preloadStore } = useStore();
