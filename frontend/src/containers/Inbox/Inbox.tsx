@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import styles from './Inbox.module.scss';
 // import logo from '../../img/idizer.logo.jpg';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { useStore } from 'hooks/useRootStore';
 import moment from 'moment';
 import { observer } from 'mobx-react-lite';
