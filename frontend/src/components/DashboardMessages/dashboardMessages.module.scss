@@ -1,0 +1,79 @@
+@use 'scss/_mixins' as *;
+@use 'scss/_vars' as *;
+
+.message {
+  padding: 5px 15px 5px 10px;
+  // margin-bottom: 3px;
+
+  max-height: 70px;
+  border-radius: 3px;
+  background-color: #323644;
+  border-bottom: 1px solid #1F2127;
+  // transition: 0.8s;
+  &:hover {
+    background-color: #454b5e;
+    // max-height: 200px;
+    // overflow: auto;
+    // .text {
+    //   position: relative;
+    //   white-space: normal;
+    // }
+    // .theme {
+    //   white-space: normal;
+    // }
+  }
+}
+
+.userLogo {
+  float: left;
+  margin: 5px 10px 5px 5px;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 23px;
+  font-weight: 600;
+  color: #c0c2c9;
+  line-height: 50px;
+  text-align: center;
+  background: #61646f;
+}
+.messageData {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.titleTime {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+.title {
+  color: #eaebf1;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.time {
+  font-size: 14px;
+  color: #c6c7cd;
+}
+
+.theme {
+  color: #d7d8dd;
+  font-size: 14px;
+  font-weight: 350;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text {
+  color: #adaeb4;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,101 @@
+{
+  "name": "idizer",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.6.0",
+    "miragejs": "^0.1.41",
+    "mobx": "^6.3.2",
+    "mobx-react-lite": "^3.2.0",
+    "mobx-state-tree": "^5.0.2",
+    "moment": "^2.29.1",
+    "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.11.1",
+    "react-player": "^2.9.0",
+    "react-query": "^3.19.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-select": "^4.3.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
+    "typescript": "^4.3.5",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "cross-env CI=true react-scripts test",
+    "commit": "cz"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/faker": "^5.5.7",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^14.17.9",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog-with-jiraid-detection": "^1.0.3",
+    "eslint": "^7.31.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "faker": "^5.5.3",
+    "husky": "^4.3.8",
+    "imagemin-lint-staged": "^0.4.0",
+    "lint-staged": "^10.5.4",
+    "mobx-devtools-mst": "^0.9.30",
+    "npm-check-updates": "^10.3.1",
+    "prettier": "^2.3.2",
+    "sass": "^1.35.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged && npm test",
+      "pre-push": "npm test"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog-with-jiraid-detection"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0 --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{png,jpeg,jpg,gif,svg}": "imagemin-lint-staged"
+  }
+}

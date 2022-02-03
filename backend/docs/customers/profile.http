@@ -1,0 +1,65 @@
+### Get logged in profile of customer
+GET {{host}}/api/v1/customers/profile
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+X-API-Key: {{x-api-key}}
+Device-Id: {{deviceId}}
+Content-Language: ua
+Authorization-Token: 9b4abfc9d914999337ef325f932e122e8341601f14624d7a40d604c0fecdbfdc
+
+###
+
+#====================================================== RESPONSE =======================================================
+# {
+#  "message": "Welcome back!",
+#  "data": {
+#    "customer": {
+#      "id": 1,
+#      "name": null,
+#      "email": null,
+#      "phone": "38050123456789",
+#      "smsCode": "",
+#      "socketToken": "ead8da8698360ed7823f7b8e1e47667b",
+#      "status": false,
+#      "createdAt": "2019-11-06T23:56:51.212Z",
+#      "updatedAt": "2019-11-06T23:56:51.212Z"
+#    },
+#    "token": "479cd3397e1026debac58bfc2e45807a917bb8d6b81319fdb46884c006b3905a"
+#  }
+# }
+########################################################################################################################
+
+
+
+### Update profile
+PUT {{host}}/api/v1/customers/profile
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+X-API-Key: {{x-api-key}}
+Device-Id: {{deviceId}}
+Content-Language: en
+Authorization-Token: 9b4abfc9d914999337ef325f932e122e8341601f14624d7a40d604c0fecdbfdc
+
+{"name": "Andrey"}
+
+###
+
+#====================================================== RESPONSE =======================================================
+# {
+#  "message": "Your profile was successfully updated.",
+#  "data": {
+#    "id": 1,
+#    "name": "John Doe",
+#    "email": "test@test.com",
+#    "phone": "38050123456789",
+#    "smsCode": "",
+#    "socketToken": "csfDDSz9ZVo:APA91bEktmq-sa9146OSNGkPQSX6pUH0jzKqbAWUMSInf3nJl7c0mHqngcVM498YWPEKp-QrBsXm1e8z4tp79thH-_NYH62bPz0r-ImJYMNUjKjcRuz3cHMagQgQwwbkAT6U8P31_3e2",
+#    "status": true,
+#    "createdAt": "2019-12-03T06:10:06.296Z",
+#    "updatedAt": "2019-12-18T18:32:54.494Z"
+#  }
+# }
+########################################################################################################################
+

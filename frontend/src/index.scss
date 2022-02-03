@@ -1,0 +1,22 @@
+@import "scss/reset";
+@import "scss/vars";
+
+body {
+  margin: 0;
+  font-family: $mainFont;
+  background: $default;
+  font-weight: 400;
+  //cursor: url(img/cursor_v4.png), default;
+}
+/*button, a, label, Link, div {
+  cursor: crosshair;
+}*/
+html {
+  scroll-behavior: smooth;
+  //cursor: url('img/cursor_v4.png') default;
+  //cursor: url(img/cursor.svg), default;
+}
+.css-1okebmr-indicatorSeparator {
+  display: none;
+}
+

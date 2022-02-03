@@ -1,0 +1,55 @@
+### Send/Re-send an SMS code to the customer
+POST {{host}}/api/v1/customers/code
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Language: ru
+X-API-Key: {{x-api-key}}
+
+{"phone": "+380123456780"}
+
+###
+
+#====================================================== RESPONSE =======================================================
+# {
+#  "message": "SMS code was successfully sent.",
+#  "data": {
+#    "phone": "380123456789",
+#    "smsCode": 3084
+#  }
+# }
+#=======================================================================================================================
+
+
+
+### Confirm code and get user session
+PUT {{host}}/api/v1/customers/code
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Language: ru
+X-API-Key: {{x-api-key}}
+Device-Id: {{deviceId}}
+
+{"phone": "+380123456780", "smsCode": "7386"}
+
+###
+
+#====================================================== RESPONSE =======================================================
+# {
+#  "message": "Welcome back!",
+#  "data": {
+#    "customer": {
+#      "id": 1,
+#      "name": null,
+#      "email": null,
+#      "phone": "38050123456789",
+#      "smsCode": "",
+#      "status": true,
+#      "createdAt": "2019-11-06T23:56:51.212Z",
+#      "updatedAt": "2019-11-06T23:56:51.212Z"
+#    },
+#    "token": "479cd3397e1026debac58bfc2e45807a917bb8d6b81319fdb46884c006b3905a"
+#  }
+# }
+########################################################################################################################

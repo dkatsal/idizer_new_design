@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "stylelint-prettier"
+  ],
+  "extends": [
+    "stylelint-config-css-modules",
+    "stylelint-config-standard"
+  ],
+  "rules": {
+    "at-rule-no-unknown": false,
+    "rule-empty-line-before": false,
+    "declaration-empty-line-before": false
+  }
+}

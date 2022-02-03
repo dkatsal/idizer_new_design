@@ -1,0 +1,54 @@
+{
+  "name": "idiser.api",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "@aws-sdk/client-workmail": "^3.23.0",
+    "@sailshq/connect-redis": "^3.2.1",
+    "@sailshq/lodash": "^3.10.3",
+    "@sailshq/socket.io-redis": "^5.2.0",
+    "aws-sdk": "^2.942.0",
+    "crypto": "^1.0.1",
+    "generate-password": "^1.6.1",
+    "grunt": "1.0.4",
+    "imap-simple": "^5.1.0",
+    "lodash": "^4.17.21",
+    "mailparser": "^3.2.0",
+    "nodemailer": "^6.5.0",
+    "pg": "^8.5.1",
+    "sails": "^1.4.3",
+    "sails-hook-grunt": "^4.0.0",
+    "sails-hook-orm": "^2.1.1",
+    "sails-hook-sequelize": "^1.2.2",
+    "sails-hook-sockets": "^2.0.0",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
+    "sequelize:help": "NODE_ENV=local npx sequelize --options-path=sequelize/options.js --help",
+    "db:migrate:create": "NODE_ENV=local npx sequelize --options-path=sequelize/options.js migration:create --name",
+    "db:migrate": "NODE_ENV=local npx sequelize --options-path=sequelize/options.js db:migrate",
+    "db:migrate:rollback": "NODE_ENV=local npx sequelize --options-path=sequelize/options.js db:migrate:undo",
+    "db:seed:create": "NODE_ENV=local npx sequelize --options-path=sequelize/options.js db:seed --name",
+    "db:seed": "NODE_ENV=local npx sequelize --options-path=sequelize/options.js db:seed:all",
+    "db:seed:rollback": "NODE_ENV=local npx sequelize --options-path=sequelize/options.js db:seed:undo:all"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/befaster/htdocs.git"
+  },
+  "author": "befaster",
+  "license": "",
+  "engines": {
+    "node": "^12.19"
+  }
+}

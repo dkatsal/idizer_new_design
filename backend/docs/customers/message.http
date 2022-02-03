@@ -1,0 +1,243 @@
+# ###Get list of all last messages
+
+# GET {{host}}/api/v1/customers/message
+# Accept: */*
+# Cache-Control: no-cache
+# Content-Type: application/json
+# X-API-Key: {{x-api-key}}
+# Device-Id: {{deviceId}}
+# Content-Language: ua
+# Authorization-Token: b10a85c6c0bbbbed30190f393741ae85002e50baa8bd042cca5b9c1f4ad9b611
+
+# ###
+
+# #====================================================== RESPONSE =======================================================
+# # {
+# #  
+# #   "data": [
+# #      {
+# #            customerSender: 
+# #             {
+# #                "id": 1,                              
+# #                "name": "John",                       
+# #                "email": "380501234567@idizer.com", 
+# #                "phone": "380501234567",            
+# #                "avatar": ".....example1.jpg",        
+# #             },
+# #            "messages": 
+# #            [
+# #               {
+# #                 "id": 22,                            
+# #                 "topic": "message header11" ,                 
+# #                 "text": "lorem ipsum 11..........",   
+# #                 "read": false,                        ---> for FILTER on FrontEnd
+# #                 "myConact": false,                    ---> for FILTER on FrontEnd
+# #                 "replied": false,                     ---> for FILTER on FrontEnd
+# #                 "createdAt": "2019-11-06T23:56:51.212Z",     
+# #                 "updatedAt": "2019-11-06T23:56:51.212Z"      
+# #               },
+# #               {
+# #                 "id": 11,                            
+# #                 "topic": "message header22" ,                 
+# #                 "text": "lorem ipsum 22..........",            
+# #                 "read": false,                        ---> for FILTER on FrontEnd
+# #                 "myConact": false,                    ---> for FILTER on FrontEnd
+# #                 "replied": false,                     ---> for FILTER on FrontEnd
+# #                 "createdAt": "2019-11-06T23:56:51.212Z",     
+# #                 "updatedAt": "2019-11-06T23:56:51.212Z"      
+# #               },
+# #               {...},
+# #               {...},
+# #            ]
+# #     },
+# #       {
+# #            customerSender: 
+# #             { 
+# #                "id": 2,                              
+# #                "name": "Jack",                       
+# #                "email": "380509921345@idizer.com", 
+# #                "phone": "380509921345",            
+# #                "avatar": ".....example2.jpg",        
+# #             },
+# #            "messages": 
+# #            [
+# #               {
+# #                 "id": 44,                            
+# #                 "topic": "message header33" ,                 
+# #                 "text": "lorem ipsum 33..........",            
+# #                 "read": false,                        ---> for FILTER on FrontEnd
+# #                 "myConact": false,                    ---> for FILTER on FrontEnd
+# #                 "replied": false,                     ---> for FILTER on FrontEnd        
+# #                 "createdAt": "2019-11-06T23:56:51.212Z",     
+# #                 "updatedAt": "2019-11-06T23:56:51.212Z"      
+# #               },
+# #               {
+# #                 "id": 33,                            
+# #                 "topic": "message header44" ,                 
+# #                 "text": "lorem ipsum 44..........",            
+# #                 "read": false,                        ---> for FILTER on FrontEnd
+# #                 "myConact": false,                    ---> for FILTER on FrontEnd
+# #                 "replied": false,                     ---> for FILTER on FrontEnd        
+# #                 "createdAt": "2019-11-06T23:56:51.212Z",     
+# #                 "updatedAt": "2019-11-06T23:56:51.212Z"      
+# #               },
+# #               {...},
+# #               {...},
+# #            ]
+# #       },
+# #    ]
+# # }
+# #
+# #########################################################################################################################
+
+
+# ### GET api/v1/customers/message/[:id]
+
+# ### e.g. api/v1/customers/message/1
+
+# ### Need to think maybe we have to use this format
+# ### GET api/v1/customers/[:customerID]/message/[:id]
+# GET {{host}}/api/v1/customers/message/[:id]
+# Accept: */*
+# Cache-Control: no-cache
+# Content-Type: application/json
+# Content-Language: ru
+# X-API-Key: {{x-api-key}}
+# Device-Id: {{deviceId}}
+# Content-Language: ua
+# Authorization-Token: b10a85c6c0bbbbed30190f393741ae85002e50baa8bd042cca5b9c1f4ad9b611
+
+# {"customerSender.id": 2}
+
+# ###
+
+# #====================================================== RESPONSE =======================================================
+# # {
+# #  "data":   
+# #          {
+# #            customerSender: 
+# #             { 
+# #                "id": 2,                              
+# #                "name": "Jack",                       
+# #                "email": "380509921345@idizer.com", 
+# #                "phone": "380509921345",            
+# #                "avatar": ".....example2.jpg",        
+# #             },
+# #            "messages": 
+# #            [
+# #               {
+# #                 "id": 44,                            
+# #                 "topic": "message header33" ,                 
+# #                 "text": "lorem ipsum 33..........",            
+# #      !!!!!!     "read": TRUE,                         ---> for FILTER on FrontEnd
+# #                 "myConact": false,                    ---> for FILTER on FrontEnd
+# #                 "replied": false,                     ---> for FILTER on FrontEnd
+# #                 "createdAt": "2019-11-06T23:56:51.212Z",     
+# #                 "updatedAt": "2019-11-06T23:56:51.212Z"      
+# #               },
+# #               {
+# #                 "id": 33,                            
+# #                 "topic": "message header44" ,                 
+# #                 "text": "lorem ipsum 44..........",            
+# #                 "read": false,                        ---> for FILTER on FrontEnd
+# #                 "myConact": false,                    ---> for FILTER on FrontEnd
+# #                 "replied": false,                     ---> for FILTER on FrontEnd        
+# #                 "createdAt": "2019-11-06T23:56:51.212Z",     
+# #                 "updatedAt": "2019-11-06T23:56:51.212Z"      
+# #               },
+# #               {...},
+# #               {...},
+# #            ]
+# #       },
+# # }
+# #=======================================================================================================================
+### Get customer messages
+#GET {{host}}/api/v1/customers/message?folder=inbox&searchCriteria[0]=ALL
+#GET {{host}}/api/v1/customers/message?folder=inbox&searchCriteria[0][0]=HEADER&searchCriteria[0][1]=SUBJECT&searchCriteria[0][2]=subject 2
+#GET {{host}}/api/v1/customers/message?folder=inbox&searchCriteria[0][0]=BODY&searchCriteria[0][1]=Second message data
+#GET {{host}}/api/v1/customers/message?folder=inbox&searchCriteria[0][0]=FROM&searchCriteria[0][1]=380123456780@idizer.awsapps.com
+GET {{host}}/api/v1/customers/message?folder=inbox&searchCriteria[0]=UNSEEN
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+X-API-Key: {{x-api-key}}
+Device-Id: {{deviceId}}
+Content-Language: ua
+Authorization-Token: 9b4abfc9d914999337ef325f932e122e8341601f14624d7a40d604c0fecdbfdc
+
+###
+# Allowed standart folders (letter case does not matter):
+
+# INBOX
+# Drafts
+# Sent Messages
+# Junk
+# Deleted Messages
+# Archive
+# Notes
+
+#====================================================== RESPONSE =======================================================
+#{
+#  "attachments": [],
+#  "html": "<div dir=\"ltr\">WOW<br>Я получил твоё письмо !<br clear=\"all\"><div><div dir=\"ltr\" class=\"gmail_signature\" data-smartmail=\"gmail_signature\"><div dir=\"ltr\"><div><div dir=\"ltr\">Юрій Зайцев<br></div></div></div></div></div><br></div><br><div class=\"gmail_quote\"><div dir=\"ltr\" class=\"gmail_attr\">чт, 5 авг. 2021 г. в 14:47, 380979772355 &lt;<a href=\"mailto:380979772355@idizer.awsapps.com\">380979772355@idizer.awsapps.com</a>&gt;:<br></div><blockquote class=\"gmail_quote\" style=\"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex\">Hello world<br>\n</blockquote></div>\n",
+#  "text": "WOW\nЯ получил твоё письмо !\nЮрій Зайцев\n\n\nчт, 5 авг. 2021 г. в 14:47, 380979772355 <380979772355@idizer.awsapps.com>:\n\n> Hello world\n>\n",
+#  "textAsHtml": "<p>WOW<br/>&YAcy; &pcy;&ocy;&lcy;&ucy;&chcy;&icy;&lcy; &tcy;&vcy;&ocy;&iocy; &pcy;&icy;&scy;&softcy;&mcy;&ocy; !<br/>&YUcy;&rcy;&iukcy;&jcy; &Zcy;&acy;&jcy;&tscy;&iecy;&vcy;</p><p>&chcy;&tcy;, 5 &acy;&vcy;&gcy;. 2021 &gcy;. &vcy; 14:47, 380979772355 &lt;<a href=\"mailto:380979772355@idizer.awsapps.com\">380979772355@idizer.awsapps.com</a>&gt;:</p><p>&gt; Hello world<br/>&gt;</p>",
+#  "subject": "Re: Subject",
+#  "references": [
+#    "<129d39c7-18ed-1620-6e2b-4d6c9d3a0e9c@idizer.awsapps.com>",
+#    "<0101017b162354e6-519bf8ed-d4c6-4fbc-86f2-4ff51c003c77-000000@us-west-2.amazonses.com>"
+#  ],
+#  "date": "2021-08-05T13:10:44.000Z",
+#  "to": {
+#    "value": [
+#      {
+#        "address": "380979772355@idizer.awsapps.com",
+#        "name": "Andrey",
+#        "avatar": "https://securechats.s3.eu-central-1.amazonaws.com/avatar/default.png"
+#      }
+#    ],
+#    "html": "<span class=\"mp_address_group\"><span class=\"mp_address_name\">380979772355</span> &lt;<a href=\"mailto:380979772355@idizer.awsapps.com\" class=\"mp_address_email\">380979772355@idizer.awsapps.com</a>&gt;</span>",
+#    "text": "380979772355 <380979772355@idizer.awsapps.com>"
+#  },
+#  "from": {
+#    "value": [
+#      {
+#        "address": "y.d.zajcev@gmail.com",
+#        "name": "Yurij Zajcev"
+#      }
+#    ],
+#    "html": "<span class=\"mp_address_group\"><span class=\"mp_address_name\">Yurij Zajcev</span> &lt;<a href=\"mailto:y.d.zajcev@gmail.com\" class=\"mp_address_email\">y.d.zajcev@gmail.com</a>&gt;</span>",
+#    "text": "Yurij Zajcev <y.d.zajcev@gmail.com>"
+#  },
+#  "messageId": "<CAO4K-NqRK7E_Qo=fakgJQWTErjZErwoNzSt2idQMynM4jdMyTA@mail.gmail.com>",
+#  "inReplyTo": "<0101017b162354e6-519bf8ed-d4c6-4fbc-86f2-4ff51c003c77-000000@us-west-2.amazonses.com>"
+#}
+########################################################################################################################
+
+### Send message
+POST {{host}}/api/v1/customers/message
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+X-API-Key: {{x-api-key}}
+Device-Id: {{deviceId}}
+Content-Language: en
+Authorization-Token: 9b4abfc9d914999337ef325f932e122e8341601f14624d7a40d604c0fecdbfdc
+
+{"from": "380979772355@idizer.awsapps.com", "to": "380123456780@idizer.awsapps.com", "subject":  "subject", "text":  "text"}
+### {"from": "380979772355@idizer.awsapps.com", "to": ["380123456780@idizer.awsapps.com", "380123456780@idizer.awsapps.com"], "subject":  "subject", "text":  "text"} ###
+
+###
+#==================================================== RESPONSE =======================================================
+#{
+#  "message": "Message was successfully sent.",
+#  "data": {
+#    "mailOptions": {
+#      "to": "380123456780@idizer.awsapps.com",
+#      "from": "380979772355@idizer.awsapps.com",
+#      "subject": "subject",
+#      "text": "text"
+#    }
+#  }
+#}
+########################################################################################################################

@@ -1,0 +1,21 @@
+{
+	"Welcome": "Welcome",
+	"A brand new app.": "A brand new app.",
+	"Your code is %s.": "Your code is %s.",
+	"Something went wrong!": "Something went wrong!",
+	"SMS code was successfully sent.": "SMS code was successfully sent.",
+	"SMS code is not valid.": "SMS code is not valid.",
+	"Device-id was not send.": "Device-id was not send.",
+	"Welcome back!": "Welcome back!",
+	"Your profile was successfully updated.": "Your profile was successfully updated.",
+	"Missing or incorrect values for required fields.": "Missing or incorrect values for required fields.",
+	"Can't create email!": "Can't create email!",
+	"Authorization-Token was not send.": "Authorization-Token was not send.",
+	"Incorrect API key": "Incorrect API key",
+	"Welcome back11111!": "Welcome back11111!",
+	"Invalid token.": "Invalid token.",
+	"Messages was was successfully received.": "Messages was was successfully received.",
+	"Message was successfully sent.": "Message was successfully sent.",
+	"!!!!!!!!": "!!!!!!!!",
+	"Messages was successfully received.": "Messages was successfully received."
+}

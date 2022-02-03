@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name": "IdizerAPI-Local",
+      "script": "app.js",
+      "instances": "1",
+      "log_date_format": "DD-MM-YYYY HH:mm Z",
+      "ignoreWatch": [
+        "[\\/\\\\]\\./",
+        "node_modules",
+        ".tmp",
+        "views",
+        "assets",
+        ".idea",
+        "http-client-endpoints.http",
+        ".git"
+      ],
+      "watch": true
+    }
+  ]
+}

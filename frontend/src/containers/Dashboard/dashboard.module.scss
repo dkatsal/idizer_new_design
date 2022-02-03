@@ -1,0 +1,123 @@
+@use 'scss/_mixins' as *;
+@use 'scss/_vars' as *;
+
+.wrapper {
+  overflow: auto;
+  background-color: #282a31;
+  position: relative;
+  // max-width: 375px;
+  height: 100vh;
+  padding: 0 3px;
+  margin: 0 auto;
+}
+
+.profilePhoto {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c0c2c9;
+  line-height: 30px;
+  text-align: center;
+  background: #464a57;
+}
+.filterBtn {
+  // padding: 0;
+  position: relative;
+  padding: 0px;
+  cursor: pointer;
+}
+.filterLogo {
+  width: 25px;
+  height: 25px;
+}
+
+.inboxBox {
+  display: flex;
+  background-color: #282a31;
+  align-items: center;
+}
+.inboxCircle {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #fff;
+  line-height: 17px;
+  text-align: center;
+  background: #8d68f5;
+  margin-right: 5px;
+}
+.accountData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  overflow: auto;
+  background: #323644;
+  border-bottom: 1px solid #1F2127;
+  max-width: 370px;
+  width: 100%;
+}
+.inbox {
+  border: 0px;
+  background-color: #282a31;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.inboxOption {
+  background-color: #282a31;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.MessageContainer {
+  position: relative;
+  margin-top: 52px;
+}
+.sendMessage {
+  position: fixed;
+  margin: 5px;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 50px;
+  font-weight: 100;
+  color: #0c0c0c;
+  line-height: 47px;
+  text-align: center;
+  background: #fac34b;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.nextPage {
+  padding-top: 20px;
+
+  text-align: center;
+  a {
+    color: white;
+  }
+}
+
+.flex {
+display: flex;
+background: #323644;
+}
+
+.allMessages {
+  width: 370px;
+  // margin-right: 20px;
+  border: 1px solid #1F2127;
+  border-top: none;
+}
+
+.allMessages2 {
+  width: 800px;
+}
+

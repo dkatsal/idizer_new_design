@@ -1,0 +1,12 @@
+#======================================================================================================================#
+#                                               Socket (only via socket)                                               #
+#======================================================================================================================#
+### Get marketplace list
+GET {{host}}/api/v1/socket/connect/89a9b3f4ae5f3ced13232b3734fc7931
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Content-Language: en
+X-API-Key: {{x-api-key}}
+
+###

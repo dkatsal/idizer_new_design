@@ -1,0 +1,43 @@
+.notificationBox {
+  position: absolute;
+  position: relative;
+  margin: 0 5px;
+}
+.content {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  margin-top: -50px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #dcdcdd;
+}
+.title {
+  font-size: 16px;
+  text-align: left;
+  color: #bcbfc5;
+  margin-bottom: 5px;
+}
+.success {
+  background-color: #454b5e;
+  // background-color: #178f35;
+  -webkit-animation: shake 0.5s forwards;
+  animation: shake 0.5s forwards;
+}
+.error {
+  background-color: #af6c6c;
+  -webkit-animation: shake 0.5s forwards;
+  animation: shake 0.5s forwards;
+}
+@-webkit-keyframes shake {
+  100% {
+    -webkit-transform: translateY(50px);
+  }
+}
+@keyframes shake {
+  100% {
+    transform: translateY(50px);
+  }
+}

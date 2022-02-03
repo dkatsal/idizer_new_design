@@ -1,0 +1,189 @@
+@use "scss/_vars" as *;
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin title($pos: relative, $fs: 48px, $color: $black) {
+  position: $pos;
+  font-size: $fs;
+  font-weight: 900;
+  color: $color;
+}
+
+@mixin wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 1209px) {
+    max-width: 1210px;
+    padding: 0 40px;
+  }
+
+  @media (min-width: 1210px) {
+    max-width: 1130px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 16px;
+  }
+  @media (max-width: 487px) {
+    //padding: 0 16px;
+  }
+}
+
+@mixin sidebarImg { // masked images with text
+  mask-position-x: center;
+  mask-position-y: top;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+
+  & img {
+    width: 100%;
+  }
+
+  @media (max-width: 959px) {
+    width: 100%;
+    margin: 0 0 45px;
+  }
+
+  @media (max-width: 720px) {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+
+
+  @media (min-width: 960px) and (max-width: 1209px) {
+    width: 50%;
+    margin: 0 0 45px;
+  }
+
+  @media (min-width: 1210px) {
+    width: 552px;
+    height: 552px;
+  }
+}
+
+@mixin sidebarText { // text width masked images
+
+  @media (max-width: 959px) {
+    width: 100%;
+  }
+
+  @media (min-width: 960px) and (max-width: 1209px) {
+    width: calc(50% - 40px);
+    max-width: 360px;
+  }
+
+  @media (min-width: 1210px) {
+    width: calc(100% - 676px);
+  }
+}
+
+@mixin pagesHeader { // header for pages, without home
+  position: relative;
+  min-height: 763px;
+  max-width: 1680px;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-color: #000;
+
+  @media (max-width: 959px) {
+    margin-bottom: -230px;
+  }
+
+  @media (max-width: 1679px) {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+  }
+
+  @media (min-width: 1680px) {
+    mask-position-x: center;
+    mask-position-y: top;
+    mask-repeat: no-repeat;
+  }
+
+  &::before {
+    position: absolute;
+    top: 110px;
+    left: -10px;
+    width: 700px;
+    height: 700px;
+    display: block;
+    content: '';
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin headerBefore {
+
+  position: absolute;
+  width: 334px;
+  height: 135px;
+  display: block;
+  content: '';
+  background-repeat: no-repeat;
+
+  @media (max-width: 767px) {
+    top: 0;
+    left: 5px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1209px) {
+    top: 42px;
+    left: 5px;
+  }
+
+  @media (min-width: 1210px) {
+    top: 34px;
+    left: -70px;
+  }
+}
+
+@mixin titleLast {
+  position: relative;
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    width: 318px;
+    height: 16px;
+    background: $purple;
+    opacity: 0.7;
+
+    @media (max-width: 767px) {
+      bottom: 6px;
+      right: -19px;
+      width: 190px;
+      height: 9px;
+    }
+
+    @media (min-width: 768px) {
+      bottom: 10px;
+      right: -30px;
+    }
+  }
+}
+
+@mixin subtitleLast {
+  position: relative;
+
+  &::after {
+    @include pseudo;
+    z-index: -1;
+    bottom: 5px;
+    right: -25px;
+    width: 170px;
+    height: 8px;
+    background: $purple;
+    opacity: 0.7;
+  }
+}
