@@ -23,19 +23,17 @@ const Header: FC = observer(() => {
   //   setvisiblePopUp(!visiblePopUp);
   // };
   return (
-    <main>
-      <div className={styles.header}>
-        <img className={styles.logo} src={logo} alt='idizer' />
-        <div>
-          <Link className={styles.profilePhoto} to='/profile'>
-            DA
-          </Link>
-          <Link className={styles.profilePhoto} to='/profile'>
-            DA
-          </Link>
-        </div>
+    <header className={styles.header}>
+      <img className={styles.logo} src={logo} alt='idizer' />
+      <div>
+        <Link className={styles.profilePhoto} to='/profile'>
+          DA
+        </Link>
+        <Link className={styles.profilePhoto} to='/profile'>
+          DA
+        </Link>
       </div>
-    </main>
+    </header>
     // <main>
     //   <Preload />
     //   <div className={styles.wrapper}>

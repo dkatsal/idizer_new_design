@@ -14,6 +14,7 @@ const Dashboard: FC = observer(() => {
   const [visiblePopUp, setvisiblePopUp] = useState(false);
   const [value, setValue] = useState('inbox');
   const [msgId, setMsgId] = useState<string>();
+  // const [reply, setReply] = useState<string>('reply');
 
   const selectFolder = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValue(e.target.value);
@@ -23,53 +24,53 @@ const Dashboard: FC = observer(() => {
     setvisiblePopUp(!visiblePopUp);
   };
   return (
-    <main>
+    <div className={styles.wrapper}>
       <Preload />
-      <div className={styles.wrapper}>
-        <Header />
-
-        {/* <Link to={`/mailblank`} className={styles.sendMessage}>
+      <Header />
+      {/* <Link to={`/mailblank`} className={styles.sendMessage}>
+        +
+      </Link> */}
+      {/* <Link to={`/mailblank`} className={styles.sendMessage}>
           +
         </Link> */}
-
-        {/* <Link to={`/mailblank`} className={styles.sendMessage}>
-            +
-          </Link> */}
-        {/* </div> */}
-        <div className={styles.flex}>
-          <div className={styles.allMessages}>
-            <div className={styles.accountData}>
-              <Link className={styles.profilePhoto} to='/profile'>
-                DA
-              </Link>
-              {/* {messagesStore.map()} */}
-              <div className={styles.inboxBox}>
-                <select className={styles.inbox} name='select' onChange={selectFolder}>
-                  <option className={styles.inboxOption} value='inbox'>
-                    Inbox
-                  </option>
-                  <option className={styles.inboxOption} value='sent'>
-                    Sent
-                  </option>
-                </select>
-              </div>
-              <div className={styles.filterBtn}>
-                <button className={styles.filterBtn} onClick={showFilter} type='button'>
-                  <img className={styles.filterLogo} src={filter} alt='filter' />
-                </button>
-
-                {visiblePopUp && <Filter />}
-              </div>
+      {/* </div> */}
+      <main className={styles.flex}>
+        <div className={styles.allMessages}>
+          <div className={styles.accountData}>
+            <Link className={styles.profilePhoto} to='/profile'>
+              DA
+            </Link>
+            {/* {messagesStore.map()} */}
+            <div className={styles.inboxBox}>
+              <select className={styles.inbox} name='select' onChange={selectFolder}>
+                <option className={styles.inboxOption} value='inbox'>
+                  Inbox
+                </option>
+                <option className={styles.inboxOption} value='sent'>
+                  Sent
+                </option>
+              </select>
             </div>
-            <DashboardMessages folder={value} setMsgId={setMsgId} />
+            <div className={styles.filterBtn}>
+              <button className={styles.filterBtn} onClick={showFilter} type='button'>
+                <img className={styles.filterLogo} src={filter} alt='filter' />
+              </button>
+              {visiblePopUp && <Filter />}
+            </div>
           </div>
-          <div className={styles.editMessage}>
-            <div className={styles.headerMessage}>111111111111111111111111111</div>
-            {msgId ? <Inbox msgId={msgId} /> : null}
-          </div>
+          <DashboardMessages folder={value} setMsgId={setMsgId} />
         </div>
-      </div>
-    </main>
+        <div className={styles.editMessage}>
+          <div className={styles.headerMessage}>
+            <button type='button'>Reply</button>
+            <button type='button'>Forward</button>
+            <button type='button'>Delete</button>
+          </div>
+          {msgId ? <Inbox msgId={msgId} /> : null}
+          {/*{reply === 'reply' ? (msgId ? <Inbox msgId={msgId} /> : null) : null }*/}
+        </div>
+      </main>
+    </div>
   );
 });
 export default Dashboard;
