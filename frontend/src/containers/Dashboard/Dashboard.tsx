@@ -63,7 +63,10 @@ const Dashboard: FC = observer(() => {
             </div>
             <DashboardMessages folder={value} setMsgId={setMsgId} />
           </div>
-          <div className={styles.allMessages2}>{msgId ? <Inbox msgId={msgId} /> : null}</div>
+          <div className={styles.editMessage}>
+            <div className={styles.headerMessage}>111111111111111111111111111</div>
+            {msgId ? <Inbox msgId={msgId} /> : null}
+          </div>
         </div>
       </div>
     </main>
