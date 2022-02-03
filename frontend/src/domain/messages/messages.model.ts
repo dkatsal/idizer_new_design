@@ -1,5 +1,5 @@
 import { types, Instance } from 'mobx-state-tree';
-const { model, maybe, string, maybeNull, boolean, array } = types;
+const { model, maybe, string, maybeNull, array } = types;
 
 export const FromModel = model('FromModel', {
   address: string,

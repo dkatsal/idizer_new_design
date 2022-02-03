@@ -1,19 +1,19 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
-import { useState } from 'react';
+// import { useState } from 'react';
 import styles from './header.module.scss';
 import logo from '../../img/idizer.logo.jpg';
-import filter from '../../img/filter_icon.png';
-import Filter from 'components/Filter';
-import Preload from 'components/Preload';
-import DashboardMessages from 'components/DashboardMessages';
-import Inbox from 'containers/Inbox';
+// import filter from '../../img/filter_icon.png';
+// import Filter from 'components/Filter';
+// import Preload from 'components/Preload';
+// import DashboardMessages from 'components/DashboardMessages';
+// import Inbox from 'containers/Inbox';
 
 const Header: FC = observer(() => {
-  const [visiblePopUp, setvisiblePopUp] = useState(false);
-  const [value, setValue] = useState('inbox');
-  const [msgId, setMsgId] = useState<string>();
+  // const [visiblePopUp, setvisiblePopUp] = useState(false);
+  // const [value, setValue] = useState('inbox');
+  // const [msgId, setMsgId] = useState<string>();
 
   // const selectFolder = (e: React.ChangeEvent<HTMLSelectElement>) => {
   //   setValue(e.target.value);
