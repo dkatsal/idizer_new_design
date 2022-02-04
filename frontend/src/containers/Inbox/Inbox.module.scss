@@ -4,7 +4,7 @@
   background-color: #1f2127;
   position: relative;
   // max-width: 375px;
-  height: 100vh;
+  //height: 100vh;
   padding: 0 3px;
   // margin: 0 auto;
 }
@@ -28,6 +28,7 @@
   padding: 0 20px;
   overflow: auto;
   margin-bottom: 10px;
+  width: 100%;
 }
 .message {
   margin-bottom: 20px;

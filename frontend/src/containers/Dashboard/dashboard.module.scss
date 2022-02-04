@@ -2,13 +2,16 @@
 @use 'scss/_vars' as *;
 
 .wrapper {
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //overflow: auto;
   background-color: #282a31;
-  position: relative;
+  //position: relative;
   // max-width: 375px;
   height: 100vh;
-  padding: 0 3px;
-  margin: 0 auto;
+  //padding: 0 3px;
+  //margin: 0 auto;
 }
 
 .profilePhoto {
@@ -25,7 +28,7 @@
 .filterBtn {
   // padding: 0;
   position: relative;
-  padding: 0px;
+  padding: 0;
   cursor: pointer;
 }
 .filterLogo {
@@ -56,13 +59,13 @@
   padding: 10px 10px;
   // overflow: auto;
   background: #323644;
-  border-bottom: 1px solid #1F2127;
+  border-bottom: 1px solid #1f2127;
   max-width: 370px;
   width: 100%;
   height: 50px;
 }
 .inbox {
-  border: 0px;
+  border: 0;
   background-color: #282a31;
   color: white;
   font-size: 24px;
@@ -106,22 +109,27 @@
   }
 }
 
-.flex {
-display: flex;
-background: #323644;
+.dashboard {
+  display: flex;
+  background: #323644;
+  height: 100vh;
+  max-width: 1170px;
+  width: 100%;
 }
 
 .allMessages {
-  width: 370px;
+  max-width: 370px;
+  width: 100%;
   // margin-right: 20px;
-  border: 1px solid #1F2127;
+  border: 1px solid #1f2127;
   border-top: none;
 }
 
 .editMessage {
   display: flex;
   flex-direction: column;
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
 }
 
 .headerMessage {
@@ -130,11 +138,6 @@ background: #323644;
   max-width: 350px;
   width: 100%;
   padding: 15px;
-  /*padding: 10px 10px;
-  background: #323644;
-  border-bottom: 1px solid #1F2127;
-  width: 100%;
-  height: 50px;*/
 }
 button {
   cursor: pointer;

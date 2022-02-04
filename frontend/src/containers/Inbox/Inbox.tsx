@@ -24,7 +24,7 @@ const Inbox: FC<Props> = observer(({ msgId }) => {
   const message = messagesStore.getMessageById(msgId)[0];
 
   return (
-    <main className={styles.wrapper}>
+    <section className={styles.wrapper}>
       <Link className={styles.goBack} to='/dashboard'>
         &#8592;
       </Link>
@@ -53,7 +53,7 @@ const Inbox: FC<Props> = observer(({ msgId }) => {
           Reply
         </Link> */}
       </div>
-    </main>
+    </section>
   );
 });
 

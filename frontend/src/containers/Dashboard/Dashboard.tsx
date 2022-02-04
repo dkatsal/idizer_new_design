@@ -35,7 +35,7 @@ const Dashboard: FC = observer(() => {
           +
         </Link> */}
       {/* </div> */}
-      <main className={styles.flex}>
+      <main className={styles.dashboard}>
         <div className={styles.allMessages}>
           <div className={styles.accountData}>
             <Link className={styles.profilePhoto} to='/profile'>

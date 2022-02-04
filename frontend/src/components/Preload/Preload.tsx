@@ -8,7 +8,7 @@ const Preload: FC = observer(() => {
 
   return preloadStore.isOpened ? (
     <section className={styles.formContainer}>
-      <div className={styles.loader}></div>
+      <div className={styles.loader} />
     </section>
   ) : null;
 });
