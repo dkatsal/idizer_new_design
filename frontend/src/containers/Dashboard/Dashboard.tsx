@@ -10,6 +10,7 @@ import DashboardMessages from 'components/DashboardMessages';
 import Inbox from 'containers/Inbox';
 import Header from 'components/Header';
 import Reply from 'containers/Reply';
+import MailBlank from 'containers/MailBlank';
 
 const Dashboard: FC = observer(() => {
   const [visiblePopUp, setvisiblePopUp] = useState(false);
@@ -63,14 +64,20 @@ const Dashboard: FC = observer(() => {
         </div>
         <div className={styles.editMessage}>
           <div className={styles.headerMessage}>
-            <button type='button' onClick={() => setStatus('reply')}>
-              Reply
+            <button
+              type='button'
+              onClick={() => setStatus(status === 'reply' || status === 'new_message' ? 'inbox' : 'reply')}>
+              {status === 'reply' || status === 'new_message' ? 'Inbox' : 'Reply'}
             </button>
             <button type='button'>Forward</button>
             <button type='button'>Delete</button>
+            <button type='button' onClick={() => setStatus('new_message')}>
+              New Message
+            </button>
           </div>
           {status === 'inbox' && msgId ? <Inbox msgId={msgId} /> : null}
           {status === 'reply' && msgId ? <Reply msgId={msgId} /> : null}
+          {status === 'new_message' ? <MailBlank /> : null}
         </div>
       </main>
     </div>
