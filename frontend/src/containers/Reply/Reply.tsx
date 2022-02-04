@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 // import Footer from '../../components/Footer';
 import React, { useState } from 'react';
 import styles from './reply.module.scss';
@@ -9,17 +9,24 @@ import { useStore } from 'hooks/useRootStore';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 
-interface IParam {
-  msgId: string;
-}
+// interface IParam {
+//   msgId: string;
+// }
 
-const Reply: FC = () => {
-  const params: IParam = useParams();
+type Props = {
+  msgId: string;
+};
+
+const Reply: FC<Props> = ({ msgId }) => {
+  // const params: IParam = useParams();
   const { messagesStore, customerStore } = useStore();
   const history = useHistory();
-  const message = messagesStore.getMessageById(params?.msgId)[0];
+  // const message = messagesStore.getMessageById(params?.msgId)[0];
+  const message = messagesStore.getMessageById(msgId)[0];
 
-  const replySentMessage = messagesStore.sentItems.filter((item) => item.messageId === params.msgId);
+  // const replySentMessage = messagesStore.sentItems.filter((item) => item.messageId === params.msgId);
+  const replySentMessage = messagesStore.sentItems.filter((item) => item.messageId === msgId);
+
   const { register, handleSubmit } = useForm();
   type IMessage = { to: string; from: string; subject: string; text: string };
   const sendMessage = useMutation((data: IMessage) => customerStore.sendMessage(data), {
@@ -56,9 +63,9 @@ const Reply: FC = () => {
 
   return (
     <div className={styles.formContainer}>
-      <Link className={styles.goBack} to={`/inboxmessage/${params.msgId}`}>
+      {/* <Link className={styles.goBack} to={`/inboxmessage/${params.msgId}`}>
         &#8592;
-      </Link>
+      </Link> */}
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <label className={styles.boxWide}>
           <span className={styles.label}>To:</span>

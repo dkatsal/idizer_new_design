@@ -9,12 +9,13 @@ import Preload from 'components/Preload';
 import DashboardMessages from 'components/DashboardMessages';
 import Inbox from 'containers/Inbox';
 import Header from 'components/Header';
+import Reply from 'containers/Reply';
 
 const Dashboard: FC = observer(() => {
   const [visiblePopUp, setvisiblePopUp] = useState(false);
   const [value, setValue] = useState('inbox');
   const [msgId, setMsgId] = useState<string>();
-  // const [reply, setReply] = useState<string>('reply');
+  const [status, setStatus] = useState<string>('inbox');
 
   const selectFolder = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValue(e.target.value);
@@ -62,12 +63,14 @@ const Dashboard: FC = observer(() => {
         </div>
         <div className={styles.editMessage}>
           <div className={styles.headerMessage}>
-            <button type='button'>Reply</button>
+            <button type='button' onClick={() => setStatus('reply')}>
+              Reply
+            </button>
             <button type='button'>Forward</button>
             <button type='button'>Delete</button>
           </div>
-          {msgId ? <Inbox msgId={msgId} /> : null}
-          {/*{reply === 'reply' ? (msgId ? <Inbox msgId={msgId} /> : null) : null }*/}
+          {status === 'inbox' && msgId ? <Inbox msgId={msgId} /> : null}
+          {status === 'reply' && msgId ? <Reply msgId={msgId} /> : null}
         </div>
       </main>
     </div>

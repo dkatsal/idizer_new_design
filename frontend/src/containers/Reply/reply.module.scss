@@ -1,11 +1,12 @@
 @use 'scss/_vars' as *;
 
 .formContainer {
-  overflow: hidden;
+  // overflow: hidden;
+  position: relative;
   background-color: #1f2127;
-  max-width: 375px;
+  // max-width: 375px;
   height: 100vh;
-  margin: 0 auto;
+  // margin: 0 auto;
 }
 .goBack {
   display: flex;
