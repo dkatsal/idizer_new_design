@@ -63,6 +63,7 @@ const MailBlank: FC = observer(() => {
               setValue(event.target.value);
             }}
             onClick={inputClickHandler}
+            autoComplete={'off'}
           />
           {isOpen ? (
             <ul className={styles.autocompleteMenu}>
@@ -84,7 +85,7 @@ const MailBlank: FC = observer(() => {
         </label>
         <label className={styles.boxWide}>
           <span className={styles.label}>Topic:</span>
-          <input className={styles.input} type='text' {...register('subject')} />
+          <input className={styles.input} type='text' {...register('subject')} autoComplete={'off'} />
         </label>
         <textarea className={styles.boxMessage} {...register('text')} placeholder='Say Hello...'>
           {/* <span className={styles.label}>From</span> */}
