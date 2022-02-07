@@ -48,7 +48,7 @@ const Profile: FC = observer(() => {
   };
 
   return (
-    <main>
+    <main className={styles.profileWrapper}>
       <Preload />
       {customerReq.isSuccess && (
         <div className={styles.formContainer}>
@@ -96,7 +96,7 @@ const Profile: FC = observer(() => {
               <span className={styles.label}>Profile Photo</span>
               <img className={styles.profileImg} src='' alt='' />
             </label> */}
-            <div className={styles.boxBtn} style={change ? { display: 'block' } : { display: 'none' }}>
+            <div className={styles.boxBtn} style={change ? { display: 'flex' } : { display: 'none' }}>
               <button className={styles.submitBtn} type='submit'>
                 Confirm
               </button>
