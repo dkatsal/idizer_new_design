@@ -5,10 +5,12 @@
   padding: 5px 15px 5px 10px;
   // margin-bottom: 3px;
 
-  max-height: 70px;
+  //max-height: 70px;
+  max-width: 370px;
+  width: 100%;
   border-radius: 3px;
   background-color: #323644;
-  border-bottom: 1px solid #1F2127;
+  border-bottom: 1px solid #1f2127;
   // transition: 0.8s;
   &:hover {
     background-color: #454b5e;
@@ -28,7 +30,7 @@
   float: left;
   margin: 5px 10px 5px 5px;
   min-width: 50px;
-  height: 50px;
+  //height: 50px;
   border-radius: 50%;
   font-size: 23px;
   font-weight: 600;
@@ -43,7 +45,7 @@
   justify-content: space-between;
   overflow: hidden;
 }
-.titleTime {
+.titleBox {
   display: flex;
   justify-content: space-between;
   margin-bottom: 3px;
@@ -60,11 +62,16 @@
   font-size: 14px;
   color: #c6c7cd;
 }
-
+.messageBox {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  max-width: 350px;
+}
 .theme {
   color: #d7d8dd;
   font-size: 14px;
-  font-weight: 350;
+  //font-weight: 350px;
   margin-bottom: 3px;
   white-space: nowrap;
   overflow: hidden;
@@ -75,5 +82,6 @@
   margin-bottom: 2px;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 280px;
   text-overflow: ellipsis;
 }

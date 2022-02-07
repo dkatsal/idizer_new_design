@@ -65,13 +65,18 @@ const Dashboard: FC = observer(() => {
         <div className={styles.editMessage}>
           <div className={styles.headerMessage}>
             <button
+              className={styles.headerBtn}
               type='button'
               onClick={() => setStatus(status === 'reply' || status === 'new_message' ? 'inbox' : 'reply')}>
               {status === 'reply' || status === 'new_message' ? 'Inbox' : 'Reply'}
             </button>
-            <button type='button'>Forward</button>
-            <button type='button'>Delete</button>
-            <button type='button' onClick={() => setStatus('new_message')}>
+            <button className={styles.headerBtn} type='button'>
+              Forward
+            </button>
+            <button className={styles.headerBtn} type='button'>
+              Delete
+            </button>
+            <button className={styles.headerBtn} type='button' onClick={() => setStatus('new_message')}>
               New Message
             </button>
           </div>

@@ -44,15 +44,18 @@ const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) =>
           // <Link to={`/inboxmessage/${item.messageId}`} >
           <div className={styles.message} key={item.messageId} onClick={() => setMsgId(item.messageId)}>
             {/* onClick={() => history.push(`/inboxmessage/${item.messageId}`)}> */}
-
-            <div className={styles.userLogo}>{item.from?.value[0].name.slice(0, 2).toUpperCase()}</div>
+            <button className={styles.userLogo} type='button'>
+              {item.from?.value[0].name.slice(0, 2).toUpperCase()}
+            </button>
             <div className={styles.messageData}>
-              <div className={styles.titleTime}>
+              <div className={styles.titleBox}>
                 <h2 className={styles.title}>{item.from?.value[0].name}</h2>
                 <p className={styles.time}>{moment(item.date).locale('ru').utc(true).format('HH:mm')}</p>
               </div>
-              <div className={styles.theme}>{item.subject}</div>
-              <p className={styles.text}>{item.text?.split('\n\n')[0]}</p>
+              <button className={styles.messageBox} type='button'>
+                <span className={styles.theme}>{item.subject}</span>
+                <span className={styles.text}>{item.text?.split('\n\n')[0]}</span>
+              </button>
             </div>
           </div>
           // </Link>

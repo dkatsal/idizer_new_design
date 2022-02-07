@@ -133,12 +133,15 @@
 }
 
 .headerMessage {
-  display: flex;
-  justify-content: space-between;
-  max-width: 350px;
-  width: 100%;
   padding: 15px;
 }
-button {
+.headerBtn {
+  border: 0;
+  background-color: initial;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+  padding: 0;
+  margin-right: 16px;
 }
