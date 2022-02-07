@@ -1,7 +1,9 @@
 .notificationBox {
-  position: absolute;
+  //position: absolute;
   position: relative;
-  margin: 0 5px;
+  margin: 0 auto;
+  max-width: 350px;
+  width: 100%;
 }
 .content {
   position: absolute;

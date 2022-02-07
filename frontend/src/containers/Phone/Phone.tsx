@@ -34,28 +34,31 @@ const Phone: FC = observer(() => {
   const onSubmit = (data: ICustomerModel) => getSmsCode.mutate(data);
 
   return (
-    <main className={styles.formContainer}>
-      <img className={styles.logo} src={logo} alt='idizer' />
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <label className={styles.boxWide}>
-          <span className={styles.label}>Phone number</span>
-          <input
-            data-tel-input
-            className={styles.input}
-            type='tel'
-            // defaultValue='+380500307309'
-            {...register('phone', { required: true, maxLength: 13, pattern: /\d{12}/ })}
-          />
-          {errors.phone && (
-            <p className={styles.labelError} style={{ display: 'block' }}>
-              Введите телефон в формате +380991234567
-            </p>
-          )}
-        </label>
-        <button className={styles.submitBtn} type='submit'>
-          Next
-        </button>
-      </form>
+    <main className={styles.formWrapper}>
+      <section className={styles.container}>
+        <img className={styles.logo} src={logo} alt='idizer' />
+        {/*<h1 className={styles.title}>Welcome to IDAZER</h1>*/}
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          <label className={styles.boxWide}>
+            <span className={styles.label}>Phone number</span>
+            <input
+              data-tel-input
+              className={styles.input}
+              type='tel'
+              // defaultValue='+380500307309'
+              {...register('phone', { required: true, maxLength: 13, pattern: /\d{12}/ })}
+            />
+            {errors.phone && (
+              <p className={styles.labelError} style={{ display: 'block' }}>
+                Введите телефон в формате +380991234567
+              </p>
+            )}
+          </label>
+          <button className={styles.submitBtn} type='submit'>
+            Next
+          </button>
+        </form>
+      </section>
     </main>
   );
 });

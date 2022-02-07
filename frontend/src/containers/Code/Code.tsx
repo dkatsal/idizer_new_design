@@ -52,31 +52,33 @@ const Code: FC = observer(() => {
   const [error, setError] = useState('');
 
   return (
-    <main className={styles.formContainer}>
-      <Notification />
-      <img className={styles.logo} src={logo} alt='idizer' />
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <label className={styles.boxWide}>
-          {/* <h2 className={styles.sms}>{`ПОЛУЧЕННЫЙ СМС КОД: ${customerStore.smsCode}`}</h2> */}
-          <span className={styles.label}>SMS CODE</span>
-          <input
-            className={styles.input}
-            style={!error ? { border: '2px solid #40424c' } : { border: '2px solid red' }}
-            type='tel'
-            {...register('smsCode')}
-            pattern='\d{4}'
-            // defaultValue={customerStore.smsCode}
-          />
-          <span className={styles.labelError}>Это поле должно содержать СМС-КОД из 4 цифр</span>
-          <span className={styles.labelError2}>{error}</span>
-        </label>
-        <button className={styles.submitBtn} type='submit'>
-          Next
+    <main className={styles.formWrapper}>
+      <section className={styles.formContainer}>
+        <Notification />
+        <img className={styles.logo} src={logo} alt='idizer' />
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          <label className={styles.boxWide}>
+            {/* <h2 className={styles.sms}>{`ПОЛУЧЕННЫЙ СМС КОД: ${customerStore.smsCode}`}</h2> */}
+            <span className={styles.label}>SMS CODE</span>
+            <input
+              className={styles.input}
+              style={!error ? { border: '2px solid #40424c' } : { border: '2px solid red' }}
+              type='tel'
+              {...register('smsCode')}
+              pattern='\d{4}'
+              // defaultValue={customerStore.smsCode}
+            />
+            <span className={styles.labelError}>Это поле должно содержать СМС-КОД из 4 цифр</span>
+            <span className={styles.labelError2}>{error}</span>
+          </label>
+          <button className={styles.submitBtn} type='submit'>
+            Next
+          </button>
+        </form>
+        <button className={styles.resendCodeBtn} onClick={getSmsCode} type='button'>
+          Resend Code
         </button>
-      </form>
-      <button className={styles.resendCodeBtn} onClick={getSmsCode} type='button'>
-        Resend Code
-      </button>
+      </section>
     </main>
   );
 });
