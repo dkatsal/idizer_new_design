@@ -25,10 +25,12 @@ const Inbox: FC<Props> = observer(({ msgId }) => {
 
   return (
     <section className={styles.wrapper}>
-      <Link className={styles.goBack} to='/dashboard'>
-        &#8592;
-      </Link>
-      <h1 className={styles.topic}>{message.subject}</h1>
+      <div className={styles.topicBox}>
+        <h1 className={styles.topic}>{message.subject}</h1>
+        <Link className={styles.goBackLink} to='/dashboard'>
+          &#8592;
+        </Link>
+      </div>
       <div className={styles.messageBox}>
         <div className={styles.message}>
           <div className={styles.userLogo}>{message.from?.value[0].name.slice(0, 2)}</div>

@@ -8,19 +8,20 @@
   padding: 0 3px;
   // margin: 0 auto;
 }
-.goBack {
-  position: absolute;
-  right: 0px;
-  top: 10px;
+.topicBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+.goBackLink {
   font-size: 24px;
   text-align: right;
   color: #e0b042;
-  cursor: pointer;
   padding-right: 10px;
 }
 .topic {
-  padding: 10px 20px;
-  margin-bottom: 10px;
   color: #e2e2e4;
   font-size: 24px;
 }

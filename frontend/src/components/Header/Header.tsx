@@ -25,7 +25,7 @@ const Header: FC = observer(() => {
   return (
     <header className={styles.header}>
       <img className={styles.logo} src={logo} alt='idizer' />
-      <div>
+      <div className={styles.profilePhotoBox}>
         <Link className={styles.profilePhoto} to='/profile'>
           DA
         </Link>

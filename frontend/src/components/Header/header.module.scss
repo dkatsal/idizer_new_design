@@ -6,16 +6,34 @@
   justify-content: space-between;
   align-items: center;
   background: #323644;
-  border-bottom: 1px solid #1f2127;
+  border: 1px solid #1f2127;
   max-width: 1170px;
   width: 100%;
+  padding: 0 20px;
 }
 
 .profilePhoto {
-  padding: 10px;
+  padding: 10px 9px;
+  width: 50px;
   background: #1f2127;
   border-radius: 50%;
+
+  //margin: 5px 10px 5px 5px;
+  //min-width: 50px;
+  //border-radius: 50%;
+  font-size: 15px;
+  font-weight: 600;
+  color: #c0c2c9;
+  line-height: 50px;
+  text-align: center;
+  //background: #61646f;
+  cursor: pointer;
+
+  &:first-child {
+    margin-right: 20px;
+  }
 }
+
 
 .check {
   font-size: 16px;
