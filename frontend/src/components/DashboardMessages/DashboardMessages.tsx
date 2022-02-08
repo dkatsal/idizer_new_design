@@ -33,7 +33,7 @@ const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) =>
   }
 
   if (messagesReq.isSuccess) {
-    setMsgId(msg[0].messageId);
+    setMsgId(msg[0].messageId || '');
   }
 
   return (
@@ -42,7 +42,7 @@ const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) =>
       {messagesReq.isSuccess &&
         msg.map((item) => (
           // <Link to={`/inboxmessage/${item.messageId}`} >
-          <div className={styles.message} key={item.messageId} onClick={() => setMsgId(item.messageId)}>
+          <div className={styles.message} key={item.messageId} onClick={() => setMsgId(item.messageId || '')}>
             {/* onClick={() => history.push(`/inboxmessage/${item.messageId}`)}> */}
             <button className={styles.userLogo} type='button'>
               {item.from?.value[0].name.slice(0, 2).toUpperCase()}

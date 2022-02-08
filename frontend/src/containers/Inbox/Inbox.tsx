@@ -33,10 +33,10 @@ const Inbox: FC<Props> = observer(({ msgId }) => {
       </div>
       <div className={styles.messageBox}>
         <div className={styles.message}>
-          <div className={styles.userLogo}>{message.from?.value[0].name.slice(0, 2)}</div>
+          <div className={styles.userLogo}>{message.from?.value[0].name.slice(0, 2) || ''}</div>
           <div className={styles.messageData}>
             <div className={styles.titleTime}>
-              <h2 className={styles.title}>{message.from?.value[0].name}</h2>
+              <h2 className={styles.title}>{message.from?.value[0].name || ''}</h2>
               <p className={styles.time}>{moment(message.date).locale('ru').utc(false).format('D MMMM, HH:mm')}</p>
             </div>
             <div className={styles.toAddressed}>to: {message.to?.value[0].address}</div>

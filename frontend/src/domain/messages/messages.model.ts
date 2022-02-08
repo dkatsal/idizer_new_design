@@ -1,5 +1,5 @@
 import { types, Instance } from 'mobx-state-tree';
-const { model, maybe, string, maybeNull, array } = types;
+const { model, maybe, string, number, maybeNull, array } = types;
 
 export const FromModel = model('FromModel', {
   address: string,
@@ -25,13 +25,31 @@ export const ToValueModel = model('ToValueModel', {
   // text: string,
 }).actions((self) => ({}));
 
+export const ContentModel = model('ContentModel', {
+  data: array(number),
+  type: string,
+}).actions((self) => ({}));
+
+export const AttachmentModel = model('AttachmentModel', {
+  checksum: string,
+  content: maybe(ContentModel),
+  contentDisposition: string,
+  contentType: string,
+  // headers: {}, //{}
+  partId: string,
+  // release: maybeNull(number), //null
+  size: maybeNull(number),
+  type: string,
+}).actions((self) => ({}));
+
 export const MessagesModel = model('MessagesModel', {
+  attachments: maybe(array(AttachmentModel)),
   from: maybe(FromValueModel),
   to: maybe(ToValueModel),
   subject: maybeNull(string),
   text: maybeNull(string),
   // read: boolean,
-  messageId: string,
+  messageId: maybe(string),
   date: string,
 }).actions((self) => ({}));
 
