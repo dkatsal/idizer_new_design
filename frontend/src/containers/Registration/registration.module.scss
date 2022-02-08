@@ -3,13 +3,18 @@
 .formContainer {
   overflow: hidden;
   background-color: #1f2127;
-  max-width: 375px;
+  //max-width: 375px;
   height: 100vh;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   // position: relative;
 }
 .formBox {
   margin-top: 20px;
+  max-width: 375px;
+
 }
 .logo {
   display: block;
@@ -76,17 +81,10 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   border-bottom: 2px solid #40424c;
   position: relative;
-  padding: 0px 10px;
-  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
 
-.boxBtn {
-  position: fixed;
-  bottom: 0;
-  padding: 20px;
-  width: 100%;
-  max-width: 375px;
-}
+.boxBtn {}
 
 .submitBtn {
   padding: 10px;

@@ -4,15 +4,16 @@ import styles from './error404.module.scss';
 
 const Error404: FC = () => {
   return (
-    <div className={styles.formContainer}>
-      <div className={styles.error}>Error 404...</div>
-      <div className={styles.errorPage}>Page not found</div>
-      {/* <div className={styles.errorBtnBox}> */}
+    <div className={styles.formWrapper}>
+      <section className={styles.formContainer}>
+        <div className={styles.error}>Error 404...</div>
+        <div className={styles.errorPage}>Page not found</div>
+        {/* <div className={styles.errorBtnBox}> */}
 
-      <Link to='/' className={styles.errorBtn}>
-        Back to Login
-      </Link>
-
+        <Link to='/' className={styles.errorBtn}>
+          Back to Login
+        </Link>
+      </section>
       {/* </div> */}
     </div>
   );
