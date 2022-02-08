@@ -59,7 +59,7 @@ const Profile: FC = observer(() => {
               &#8592;
             </Link>
           </div>
-          <div className={styles.boxBtn} style={change ? { display: 'none' } : { display: 'block' }}>
+          <div className={styles.editBtnBox} style={change ? { display: 'none' } : { display: 'block' }}>
             <button className={styles.changeBtn} onClick={() => setChange(true)} type='button'>
               edit
             </button>
@@ -96,7 +96,7 @@ const Profile: FC = observer(() => {
               <span className={styles.label}>Profile Photo</span>
               <img className={styles.profileImg} src='' alt='' />
             </label> */}
-            <div className={styles.boxBtn} style={change ? { display: 'flex' } : { display: 'none' }}>
+            <div className={styles.confirmBtnBox} style={change ? { display: 'flex' } : { display: 'none' }}>
               <button className={styles.submitBtn} type='submit'>
                 Confirm
               </button>

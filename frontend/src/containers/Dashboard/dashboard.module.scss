@@ -56,7 +56,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px;
+  padding: 10px 10px 10px 15px;
   // overflow: auto;
   background: #323644;
   border-bottom: 1px solid #1f2127;
@@ -67,6 +67,13 @@
   @media (max-width: 590px) {
     max-width: initial;
   }
+}
+.filterMenu {
+  cursor: pointer;
+  background-color: #814df5;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 3px;
 }
 .inbox {
   border: 0;
@@ -119,22 +126,37 @@
   height: 100vh;
   max-width: 1170px;
   width: 100%;
+  position: relative;
   
   @media (max-width: 590px) {
     display: initial;
   }
 }
 
-.filterBlock {
+.filterBlock,
+.filterBlockClose {
   max-width: 250px;
   width: 100%;
   // margin-right: 20px;
   border-left: 1px solid #1f2127;
   border-top: none;
+  background: #323644;
 
   @media (max-width: 590px) {
     max-width: initial;
   }
+}
+.filterBlock {
+  transform: translate(0);
+  transition: 0.8s;
+}
+.filterBlockClose {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-100%);
+  transition: 0.8s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .allMessages {
@@ -143,6 +165,7 @@
   // margin-right: 20px;
   border: 1px solid #1f2127;
   border-top: none;
+  transition: 0.8s;
 
   @media (max-width: 590px) {
     max-width: initial;

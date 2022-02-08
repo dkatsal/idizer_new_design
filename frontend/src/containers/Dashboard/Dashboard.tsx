@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import styles from './dashboard.module.scss';
@@ -17,6 +17,8 @@ const Dashboard: FC = observer(() => {
   const [value, setValue] = useState('inbox');
   const [msgId, setMsgId] = useState<string>();
   const [status, setStatus] = useState<string>('inbox');
+
+  const [openFilterMenu, setOpenFilterMenu] = useState(false);
 
   const selectFolder = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValue(e.target.value);
@@ -37,7 +39,7 @@ const Dashboard: FC = observer(() => {
         </Link> */}
       {/* </div> */}
       <main className={styles.dashboard}>
-        <div className={styles.filterBlock}>
+        <div className={openFilterMenu ? styles.filterBlock : styles.filterBlockClose}>
           <div className={styles.accountData}>
             <div className={styles.filterBtn}>
               <button className={styles.filterBtn} onClick={showFilter} type='button'>
@@ -50,6 +52,9 @@ const Dashboard: FC = observer(() => {
         </div>
         <div className={styles.allMessages}>
           <div className={styles.accountData}>
+            <button className={styles.filterMenu} type='button' onClick={() => setOpenFilterMenu(!openFilterMenu)}>
+              Filter
+            </button>
             <div className={styles.inboxBox}>
               <select className={styles.inbox} name='select' onChange={selectFolder}>
                 <option className={styles.inboxOption} value='inbox'>

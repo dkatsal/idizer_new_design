@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 
 const Filter: FC = observer(() => {
   return (
-    <div>
+    <div className={styles.filterWrapper}>
       <h1 className={styles.filterTitle}>Filters</h1>
       <div className={styles.filterPopUp}>
         <label className={styles.check}>
