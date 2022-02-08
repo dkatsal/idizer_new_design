@@ -53,13 +53,13 @@ const Profile: FC = observer(() => {
       {customerReq.isSuccess && (
         <div className={styles.formContainer}>
           <Notification />
-          <div className={styles.header}>
+          <div className={change ? styles.headerDown : styles.header}>
             <h1 className={styles.headerTitle}>Profile</h1>
             <Link className={styles.goBack} to='/dashboard'>
               &#8592;
             </Link>
           </div>
-          <div className={styles.editBtnBox} style={change ? { display: 'none' } : { display: 'block' }}>
+          <div className={change ? styles.editBtnBoxDown : styles.editBtnBox}>
             <button className={styles.changeBtn} onClick={() => setChange(true)} type='button'>
               edit
             </button>
@@ -96,7 +96,7 @@ const Profile: FC = observer(() => {
               <span className={styles.label}>Profile Photo</span>
               <img className={styles.profileImg} src='' alt='' />
             </label> */}
-            <div className={styles.confirmBtnBox} style={change ? { display: 'flex' } : { display: 'none' }}>
+            <div className={change ? styles.confirmBtnBox : styles.confirmBtnBoxUp}>
               <button className={styles.submitBtn} type='submit'>
                 Confirm
               </button>
