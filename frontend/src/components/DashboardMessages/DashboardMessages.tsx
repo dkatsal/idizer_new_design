@@ -10,7 +10,7 @@ import moment from 'moment';
 
 type UserItemPropss = {
   folder: string;
-  setMsgId: (msgId: string) => void;
+  setMsgId: (msgId: number) => void;
 };
 const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) => {
   const { messagesStore, preloadStore } = useStore();
@@ -32,18 +32,19 @@ const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) =>
     msg = messagesStore.sentItems;
   }
 
-  if (messagesReq.isSuccess) {
-    setMsgId(msg[0].messageId || '');
+  if (messagesReq.isSuccess && msg.length) {
+    setMsgId(0);
   }
 
-  return (
-    <>
+  return msg ? (
+    <section className={styles.dmWrapper}>
       <Notification />
       {messagesReq.isSuccess &&
-        msg.map((item) => (
+        msg.map((item, index) => (
           // <Link to={`/inboxmessage/${item.messageId}`} >
-          <div className={styles.message} key={item.messageId} onClick={() => setMsgId(item.messageId || '')}>
+          <div className={styles.message} key={item.messageId} onClick={() => setMsgId(index)}>
             {/* onClick={() => history.push(`/inboxmessage/${item.messageId}`)}> */}
+            {console.log('item.messageId>>>', item.messageId ? undefined : 'Нет сообщения')}
             <button className={styles.userLogo} type='button'>
               {item.from?.value[0].name.slice(0, 2).toUpperCase()}
             </button>
@@ -60,8 +61,8 @@ const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) =>
           </div>
           // </Link>
         ))}
-    </>
-  );
+    </section>
+  ) : null;
 });
 
 export default DashboardMessages;

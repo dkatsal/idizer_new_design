@@ -14,7 +14,7 @@ import { useMutation } from 'react-query';
 // }
 
 type Props = {
-  msgId: string;
+  msgId: number | string;
 };
 
 const Reply: FC<Props> = ({ msgId }) => {
@@ -22,7 +22,7 @@ const Reply: FC<Props> = ({ msgId }) => {
   const { messagesStore, customerStore } = useStore();
   const history = useHistory();
   // const message = messagesStore.getMessageById(params?.msgId)[0];
-  const message = messagesStore.getMessageById(msgId)[0];
+  const message = messagesStore.inbox[Number(msgId)];
 
   // const replySentMessage = messagesStore.sentItems.filter((item) => item.messageId === params.msgId);
   const replySentMessage = messagesStore.sentItems.filter((item) => item.messageId === msgId);
@@ -107,7 +107,7 @@ const Reply: FC<Props> = ({ msgId }) => {
           />
         </label>
         <div className={styles.boxMessage}>
-          <textarea className={styles.message} {...register('text')}></textarea>
+          <textarea className={styles.message} {...register('text')} />
           <div className={styles.replyMessage}>{message.text}</div>
 
           {/* <div className={styles.replyMessage}>{mockdata[0].replymessage}</div> */}

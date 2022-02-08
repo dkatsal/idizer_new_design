@@ -78,11 +78,12 @@ const MailBlank: FC = observer(() => {
           <input
             className={styles.input}
             type='text'
-            value={customerStore.customer?.email ? `${customerStore.customer.email}` : `Anonim`}
+            value={customerStore.customer?.email ? `${customerStore.customer.email}` : `Enter your email`}
             {...register('from')}
             readOnly
           />
         </label>
+        {console.log('customerStore.customer<<<<<<', customerStore.customer)}
         <label className={styles.boxWide}>
           <span className={styles.label}>Topic:</span>
           <input className={styles.input} type='text' {...register('subject')} autoComplete={'off'} />

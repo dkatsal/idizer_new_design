@@ -127,6 +127,7 @@
   max-width: 1170px;
   width: 100%;
   position: relative;
+  overflow: hidden;
   
   @media (max-width: 590px) {
     display: initial;
@@ -156,7 +157,7 @@
   left: 0;
   transform: translate(-100%);
   transition: 0.8s;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .allMessages {
