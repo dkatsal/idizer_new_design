@@ -37,12 +37,19 @@ const Dashboard: FC = observer(() => {
         </Link> */}
       {/* </div> */}
       <main className={styles.dashboard}>
+        <div className={styles.filterBlock}>
+          <div className={styles.accountData}>
+            <div className={styles.filterBtn}>
+              <button className={styles.filterBtn} onClick={showFilter} type='button'>
+                <img className={styles.filterLogo} src={filter} alt='filter' />
+              </button>
+            </div>
+          </div>
+          <Filter />
+          {/* <DashboardMessages folder={value} setMsgId={setMsgId} /> */}
+        </div>
         <div className={styles.allMessages}>
           <div className={styles.accountData}>
-            <Link className={styles.profilePhoto} to='/profile'>
-              DA
-            </Link>
-            {/* {messagesStore.map()} */}
             <div className={styles.inboxBox}>
               <select className={styles.inbox} name='select' onChange={selectFolder}>
                 <option className={styles.inboxOption} value='inbox'>
@@ -52,12 +59,6 @@ const Dashboard: FC = observer(() => {
                   Sent
                 </option>
               </select>
-            </div>
-            <div className={styles.filterBtn}>
-              <button className={styles.filterBtn} onClick={showFilter} type='button'>
-                <img className={styles.filterLogo} src={filter} alt='filter' />
-              </button>
-              {visiblePopUp && <Filter />}
             </div>
           </div>
           <DashboardMessages folder={value} setMsgId={setMsgId} />

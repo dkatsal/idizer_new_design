@@ -1,30 +1,29 @@
 @use 'scss/_vars' as *;
 @use 'scss/_mixins' as *;
+
+.filterTitle {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 20px 10px;
+}
+
 .filterPopUp {
-  position: absolute;
-  z-index: 1;
-  top: 50px;
-  right: -250px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  overflow: auto;
-  border-radius: 3px;
-  background: #626779;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 9%);
-  padding: 10px 10px;
-  width: 230px;
+  padding: 10px 10px 10px 20px;
 }
 .check {
+  display: flex;
   font-size: 16px;
   color: #babec9;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  align-items: center;
 }
 .checkInput {
-  padding-top: 3px;
   width: 1em;
   height: 1em;
   margin-right: 5px;
   border-radius: 0.05em;
-  background-color: #1f349b;
 }

@@ -125,6 +125,18 @@
   }
 }
 
+.filterBlock {
+  max-width: 250px;
+  width: 100%;
+  // margin-right: 20px;
+  border-left: 1px solid #1f2127;
+  border-top: none;
+
+  @media (max-width: 590px) {
+    max-width: initial;
+  }
+}
+
 .allMessages {
   max-width: 370px;
   width: 100%;
@@ -136,6 +148,7 @@
     max-width: initial;
   }
 }
+
 
 .editMessage {
   display: flex;
