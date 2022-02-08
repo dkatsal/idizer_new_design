@@ -13,7 +13,7 @@ import { observer } from 'mobx-react-lite';
 //   msgId: string;
 // }
 type Props = {
-  msgId: string;
+  msgId: number;
 };
 
 const Inbox: FC<Props> = observer(({ msgId }) => {
@@ -21,7 +21,7 @@ const Inbox: FC<Props> = observer(({ msgId }) => {
   const { messagesStore } = useStore();
 
   // const message = messagesStore.getMessageById(params?.msgId)[0];
-  const message = messagesStore.getMessageById(msgId)[0];
+  const message = messagesStore.inbox[msgId];
 
   return (
     <section className={styles.wrapper}>

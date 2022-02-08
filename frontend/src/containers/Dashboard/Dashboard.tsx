@@ -15,7 +15,7 @@ import MailBlank from 'containers/MailBlank';
 const Dashboard: FC = observer(() => {
   const [visiblePopUp, setvisiblePopUp] = useState(false);
   const [value, setValue] = useState('inbox');
-  const [msgId, setMsgId] = useState<string>();
+  const [msgId, setMsgId] = useState<number>();
   const [status, setStatus] = useState<string>('inbox');
 
   const [openFilterMenu, setOpenFilterMenu] = useState(false);

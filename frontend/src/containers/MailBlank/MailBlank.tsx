@@ -15,7 +15,7 @@ const MailBlank: FC = observer(() => {
 
   const history = useHistory();
   const { register, handleSubmit } = useForm();
-  console.log('>>>', customerStore);
+
   type IMessage = { to: string; from: string; subject: string; text: string };
 
   const customerReq = useQuery<ICustomerModel[]>('customerReq', () => customerStore.getProfile(), {
