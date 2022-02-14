@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 // import Footer from '../../components/Footer';
 import React, { useState } from 'react';
 import styles from './reply.module.scss';
@@ -14,7 +14,7 @@ import { useMutation } from 'react-query';
 // }
 
 type Props = {
-  msgId: number | string;
+  msgId: string;
 };
 
 const Reply: FC<Props> = ({ msgId }) => {
@@ -22,7 +22,7 @@ const Reply: FC<Props> = ({ msgId }) => {
   const { messagesStore, customerStore } = useStore();
   const history = useHistory();
   // const message = messagesStore.getMessageById(params?.msgId)[0];
-  const message = messagesStore.inbox[Number(msgId)];
+  const message = messagesStore.getMessageById(msgId)[0];
 
   // const replySentMessage = messagesStore.sentItems.filter((item) => item.messageId === params.msgId);
   const replySentMessage = messagesStore.sentItems.filter((item) => item.messageId === msgId);

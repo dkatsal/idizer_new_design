@@ -25,6 +25,10 @@
   text-align: center;
   background: #464a57;
 }
+.filtersBox {
+  margin-left: 10px;
+}
+
 .filterBtn {
   // padding: 0;
   position: relative;
@@ -38,8 +42,9 @@
 
 .inboxBox {
   display: flex;
-  background-color: #282a31;
+  // background-color: #282a31;
   align-items: center;
+  padding-left: 10px;
 }
 .inboxCircle {
   width: 17px;
@@ -54,7 +59,7 @@
 }
 .accountData {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 10px 10px 10px 15px;
   // overflow: auto;
@@ -70,25 +75,33 @@
 }
 .filterMenu {
   cursor: pointer;
-  background-color: #814df5;
-  color: white;
-  padding: 3px 7px;
-  border-radius: 3px;
+  // background-color: #c9c9c9;
+  // color: white;
+  padding: 7px;
+  // border-radius: 3px;
 }
 .inbox {
   border: 0;
-  background-color: #282a31;
+  // background-color: #282a31;
   color: white;
   font-size: 24px;
   font-weight: 600;
   cursor: pointer;
 }
 .inboxOption {
-  background-color: #282a31;
+  // background-color: #282a31; 
   color: white;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  padding: 10px;
+}
+
+.choicedFolder {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
 }
 .MessageContainer {
   position: relative;

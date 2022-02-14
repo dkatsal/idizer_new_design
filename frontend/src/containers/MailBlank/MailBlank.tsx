@@ -63,9 +63,9 @@ const MailBlank: FC = observer(() => {
     <>
       {customerReq.isSuccess ? (
         <main className={styles.formContainer}>
-          <Link className={styles.goBack} to='/dashboard'>
+          {/* <Link className={styles.goBack} to='/dashboard'>
             &#8592;
-          </Link>
+          </Link> */}
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <label className={styles.boxWide}>
               <span className={styles.label}>To:</span>

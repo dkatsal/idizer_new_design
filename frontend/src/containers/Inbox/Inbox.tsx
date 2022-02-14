@@ -12,8 +12,9 @@ import { observer } from 'mobx-react-lite';
 // interface IParam {
 //   msgId: string;
 // }
+
 type Props = {
-  msgId: number;
+  msgId: string;
 };
 
 const Inbox: FC<Props> = observer(({ msgId }) => {
@@ -21,15 +22,15 @@ const Inbox: FC<Props> = observer(({ msgId }) => {
   const { messagesStore } = useStore();
 
   // const message = messagesStore.getMessageById(params?.msgId)[0];
-  const message = messagesStore.inbox[msgId];
+  const message = messagesStore.getMessageById(msgId)[0];
 
   return (
     <section className={styles.wrapper}>
       <div className={styles.topicBox}>
         <h1 className={styles.topic}>{message.subject}</h1>
-        <Link className={styles.goBackLink} to='/dashboard'>
+        {/* <Link className={styles.goBackLink} to='/dashboard'>
           &#8592;
-        </Link>
+        </Link> */}
       </div>
       <div className={styles.messageBox}>
         <div className={styles.message}>

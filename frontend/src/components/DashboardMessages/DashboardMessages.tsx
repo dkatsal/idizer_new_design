@@ -10,7 +10,7 @@ import moment from 'moment';
 
 type UserItemPropss = {
   folder: string;
-  setMsgId: (msgId: number) => void;
+  setMsgId: (msgId: string) => void;
 };
 const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) => {
   const { messagesStore, preloadStore } = useStore();
@@ -25,26 +25,32 @@ const DashboardMessages: FC<UserItemPropss> = observer(({ folder, setMsgId }) =>
       history.push('*');
     },
   });
-  let msg = null;
-  if (folder === 'inbox') {
-    msg = messagesStore.inbox;
+  let msg: IMessagesModel[] = [];
+  const undelivered: any[] = [];
+  if (folder === 'inbox' || folder === 'undelivered') {
+    const msgArray: IMessagesModel[] = messagesStore.inbox;
+    msgArray.map((item) => (item.messageId ? msg.push(item) : undelivered.push(item)));
   } else {
     msg = messagesStore.sentItems;
   }
+  console.log('msg', msg);
 
-  if (messagesReq.isSuccess && msg.length) {
-    setMsgId(0);
+  if (messagesReq.isSuccess && folder !== 'undelivered' && msg.length > 0) {
+    setMsgId(msg[0].messageId || '');
   }
 
-  return msg ? (
+  if (folder === 'undelivered') {
+    msg = undelivered;
+  }
+
+  return msg.length ? (
     <section className={styles.dmWrapper}>
       <Notification />
       {messagesReq.isSuccess &&
         msg.map((item, index) => (
           // <Link to={`/inboxmessage/${item.messageId}`} >
-          <div className={styles.message} key={item.messageId} onClick={() => setMsgId(index)}>
+          <div className={styles.message} key={item.messageId} onClick={() => setMsgId(item.messageId || '')}>
             {/* onClick={() => history.push(`/inboxmessage/${item.messageId}`)}> */}
-            {console.log('item.messageId>>>', item.messageId ? undefined : 'Нет сообщения')}
             <button className={styles.userLogo} type='button'>
               {item.from?.value[0].name.slice(0, 2).toUpperCase()}
             </button>
